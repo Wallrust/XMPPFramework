@@ -64,7 +64,7 @@
 // Global flag to enable/disable logging throughout the entire xmpp framework.
 
 #ifndef XMPP_LOGGING_ENABLED
-#define XMPP_LOGGING_ENABLED 1
+#define XMPP_LOGGING_ENABLED 0
 #endif
 
 // Define logging context for every log message coming from the XMPP framework.
@@ -122,7 +122,7 @@
 // These are primarily wrappers around the macros defined in Lumberjack's DDLog.h header file.
 
 #define XMPP_LOG_OBJC_MAYBE(async, lvl, flg, ctx, frmt, ...) \
-do{ if(XMPP_LOGGING_ENABLED) LOG_MAYBE(async, lvl, flg, ctx, nil, sel_getName(_cmd), frmt, ##__VA_ARGS__); } while(0)
+    do{ if(XMPP_LOGGING_ENABLED) LOG_MAYBE(async, lvl, flg, ctx, nil, sel_getName(_cmd), frmt, ##__VA_ARGS__); } while(0)
 
 #define XMPP_LOG_C_MAYBE(async, lvl, flg, ctx, frmt, ...) \
     do{ if(XMPP_LOGGING_ENABLED) LOG_MAYBE(async, lvl, flg, ctx, nil, __FUNCTION__, frmt, ##__VA_ARGS__); } while(0)
