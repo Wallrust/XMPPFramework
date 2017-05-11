@@ -2,9 +2,8 @@
 #import "XMPPSASLAuthentication.h"
 #import "XMPPCustomBinding.h"
 #import "GCDMulticastDelegate.h"
-#import "CocoaAsyncSocket/GCDAsyncSocket.h"
-
-@import KissXML;
+#import "GCDAsyncSocket.h"
+#import "KissXML.h"
 
 @class XMPPSRVResolver;
 @class XMPPParser;
