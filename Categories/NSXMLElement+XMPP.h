@@ -22,7 +22,6 @@
  * The category methods below are more readable, and they actually work.
 **/
 
-+ (NSXMLElement *)elementWithName:(NSString *)name xmlns:(NSString *)ns;
 - (id)initWithName:(NSString *)name xmlns:(NSString *)ns;
 
 /**
@@ -36,8 +35,6 @@
  * Extracting a single element.
 **/
 
-- (NSXMLElement *)elementForName:(NSString *)name;
-- (NSXMLElement *)elementForName:(NSString *)name xmlns:(NSString *)xmlns;
 - (NSXMLElement *)elementForName:(NSString *)name xmlnsPrefix:(NSString *)xmlnsPrefix;
 
 /**
@@ -52,23 +49,6 @@
 - (void)removeElementForName:(NSString *)name xmlnsPrefix:(NSString *)xmlnsPrefix;
 
 /**
- * Working with the common xmpp xmlns value.
- * 
- * Use these instead of getting/setting the URI.
- * The category methods below are more readable, and they actually work.
-**/
-
-- (NSString *)xmlns;
-- (void)setXmlns:(NSString *)ns;
-
-/**
- * Convenience methods for printing xml elements with different styles.
-**/
-
-- (NSString *)prettyXMLString;
-- (NSString *)compactXMLString;
-
-/**
  * Convenience methods for adding attributes.
 **/
 
@@ -78,7 +58,6 @@
 - (void)addAttributeWithName:(NSString *)name doubleValue:(double)doubleValue;
 - (void)addAttributeWithName:(NSString *)name integerValue:(NSInteger)integerValue;
 - (void)addAttributeWithName:(NSString *)name unsignedIntegerValue:(NSUInteger)unsignedIntegerValue;
-- (void)addAttributeWithName:(NSString *)name stringValue:(NSString *)string;
 - (void)addAttributeWithName:(NSString *)name numberValue:(NSNumber *)number;
 - (void)addAttributeWithName:(NSString *)name objectValue:(id)objectValue;
 
@@ -123,8 +102,6 @@
 - (NSString *)attributeStringValueForName:(NSString *)name withDefaultValue:(NSString *)defaultValue;
 - (NSNumber *)attributeNumberIntValueForName:(NSString *)name withDefaultValue:(int)defaultValue;
 - (NSNumber *)attributeNumberBoolValueForName:(NSString *)name withDefaultValue:(BOOL)defaultValue;
-
-- (NSMutableDictionary *)attributesAsDictionary;
 
 /**
  * Convenience methods for extracting element values in different formats.
